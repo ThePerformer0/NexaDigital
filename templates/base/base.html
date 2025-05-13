@@ -1,40 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}NexaDigital{% endblock %}</title>
-    
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Configuration personnalisée Tailwind -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'nexa-blue': '#2563eb',
-                        'nexa-green': '#16a34a',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "nexa-blue": "#2563eb",
+              "nexa-green": "#16a34a",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
-    
+
     <!-- Pour les polices -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="font-sans bg-gray-50">
-    {% include 'partials/header.html' %}
-    
-    <main class="min-h-screen">
-        {% block content %}{% endblock %}
-    </main>
-    
-    {% include 'partials/footer.html' %}
-</body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Header intégré directement -->
+    <header class="bg-white shadow-sm">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-xl font-bold text-nexa-blue">
+            <a href="{% url 'home' %}">NexaDigital</a>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="{% url 'home' %}"
+              class="text-gray-600 hover:text-nexa-blue"
+              >Accueil</a
+            >
+            <a
+              href="{% url 'service_list' %}"
+              class="text-gray-600 hover:text-nexa-blue"
+              >Services</a
+            >
+            <a
+              href="{% url 'lead_form' %}"
+              class="text-gray-600 hover:text-nexa-blue"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="min-h-screen">{% block content %}{% endblock %}</main>
+
+    <!-- Footer intégré directement -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <p>&copy; 2025 NexaDigital. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

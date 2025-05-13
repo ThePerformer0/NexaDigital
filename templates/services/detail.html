@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white shadow rounded-lg overflow-hidden">
+        <div class="p-6">
+            <div class="flex items-center mb-6">
+                <i class="{{ service.icon_class }} text-nexa-blue text-3xl mr-4"></i>
+                <h1 class="text-3xl font-bold text-gray-900">{{ service.name }}</h1>
+            </div>
+            
+            <div class="prose max-w-none">
+                {{ service.full_description|linebreaks }}
+            </div>
+            
+            <div class="mt-12">
+                <h2 class="text-2xl font-bold mb-6 text-nexa-blue">Avantages</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    {% for benefit in service.benefits.all %}
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <i class="{{ benefit.icon }} text-nexa-green text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="text-lg font-semibold">{{ benefit.title }}</h3>
+                                <p class="mt-2 text-gray-600">{{ benefit.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

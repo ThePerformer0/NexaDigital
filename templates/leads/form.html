@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white shadow rounded-lg overflow-hidden max-w-3xl mx-auto">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold text-gray-900 mb-6">
+                {% if form.initial.type == 'QUOTE' %}Demande de devis
+                {% else %}Contactez-nous{% endif %}
+            </h1>
+            
+            <form method="post" class="space-y-6">
+                {% csrf_token %}
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Type de demande</label>
+                        {{ form.type }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Service concerné</label>
+                        {{ form.service }}
+                    </div>
+                </div>
+                
+                <!-- Ajouter les autres champs du formulaire -->
+                
+                <button type="submit" class="bg-nexa-green text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition w-full">
+                    Envoyer la demande
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
