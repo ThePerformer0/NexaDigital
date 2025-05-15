@@ -1,16 +1,446 @@
 {% extends 'base/base.html' %}
+{% block title %}Accueil - NexaDigital{% endblock %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="text-center">
-        <h1 class="text-4xl font-bold text-nexa-blue mb-6">Bienvenue chez NexaDigital</h1>
-        <p class="text-xl text-gray-600">Solutions numériques pour les PME africaines</p>
-        
-        <div class="mt-10">
-            <a href="#" class="bg-nexa-green text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition">
-                Découvrir nos services
-            </a>
+<!-- Hero Section avec animation et image de fond -->
+<section class="relative overflow-hidden bg-gradient-to-r from-blue-50 to-purple-50 py-20 md:py-28">
+  <!-- Motif décoratif (cercles en arrière-plan) -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-20 left-10 w-40 h-40 rounded-full bg-primary opacity-20"></div>
+    <div class="absolute bottom-20 right-10 w-60 h-60 rounded-full bg-accent opacity-10"></div>
+    <div class="absolute top-40 right-20 w-20 h-20 rounded-full bg-secondary opacity-20"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <!-- Texte hero -->
+      <div class="md:w-1/2 text-center md:text-left animate-fade-in">
+        <span class="inline-block px-4 py-1 bg-blue-100 text-primary rounded-full text-sm font-medium mb-6">
+          Solutions numériques pour l'Afrique
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 font-display">
+          <span class="gradient-text">Transformez</span> votre entreprise avec le numérique
+        </h1>
+        <p class="text-lg text-gray-600 mb-8 max-w-lg">
+          Des solutions digitales accessibles et innovantes pour accompagner les PME africaines dans leur croissance et leur transformation numérique.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+          <a href="{% url 'service_list' %}" class="px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-medium rounded-lg hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+            Découvrir nos services
+          </a>
+          <a href="#" class="px-6 py-3 border border-primary text-primary bg-white/80 font-medium rounded-lg hover:bg-blue-50 transition-all">
+            Voir nos réalisations
+          </a>
         </div>
+      </div>
+
+      <!-- Image hero -->
+      <div class="md:w-1/2 mt-12 md:mt-0 animate-fade-in">
+        <div class="relative">
+          <div class="absolute inset-0 rounded-2xl -rotate-6 bg-gradient-to-r from-primary to-accent opacity-20 transform -translate-x-4 translate-y-4"></div>
+          <img src="/api/placeholder/600/400" alt="Digital business transformation" class="relative rounded-2xl shadow-custom animate-on-scroll" />
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- Section services principaux -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full text-sm font-medium mb-4">
+        Nos services
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold font-display mb-4">
+        Solutions complètes pour votre <span class="gradient-text">présence digitale</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Des services adaptés aux besoins des entreprises africaines, avec un accompagnement personnalisé à chaque étape.
+      </p>
+    </div>
+
+    <!-- Cartes de services -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Service 1 -->
+      <div class="bg-white rounded-xl shadow-custom hover:shadow-lg transition-shadow p-6 group animate-on-scroll">
+        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+          <i class="fas fa-laptop-code text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Création de site web</h3>
+        <p class="text-gray-600 mb-4">Sites vitrines et e-commerce optimisés pour convertir vos visiteurs en clients.</p>
+        <a href="{% url 'service_detail' slug='creation-site-web' %}" class="text-primary flex items-center font-medium hover:text-accent transition-colors">
+          En savoir plus
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="bg-white rounded-xl shadow-custom hover:shadow-lg transition-shadow p-6 group animate-on-scroll">
+        <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+          <i class="fas fa-bullhorn text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Marketing digital</h3>
+        <p class="text-gray-600 mb-4">Stratégies sur mesure pour augmenter votre visibilité et acquérir de nouveaux clients.</p>
+        <a href="{% url 'service_detail' slug='marketing-digital' %}" class="text-primary flex items-center font-medium hover:text-accent transition-colors">
+          En savoir plus
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="bg-white rounded-xl shadow-custom hover:shadow-lg transition-shadow p-6 group animate-on-scroll">
+        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+          <i class="fas fa-paint-brush text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Branding & Design</h3>
+        <p class="text-gray-600 mb-4">Identité visuelle mémorable pour différencier votre marque sur le marché africain.</p>
+        <a href="{% url 'service_detail' slug='branding' %}" class="text-primary flex items-center font-medium hover:text-accent transition-colors">
+          En savoir plus
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="bg-white rounded-xl shadow-custom hover:shadow-lg transition-shadow p-6 group animate-on-scroll">
+        <div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-600 mb-6 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+          <i class="fas fa-graduation-cap text-xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Formation</h3>
+        <p class="text-gray-600 mb-4">Accompagnement et montée en compétences numériques pour votre équipe.</p>
+        <a href="{% url 'service_detail' slug='formation' %}" class="text-primary flex items-center font-medium hover:text-accent transition-colors">
+          En savoir plus
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section à propos avec stats -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <!-- Image à propos -->
+      <div class="lg:w-1/2 animate-on-scroll">
+        <div class="relative">
+          <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-lg"></div>
+          <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-lg"></div>
+          <img src="/api/placeholder/500/400" alt="L'équipe NexaDigital" class="relative z-10 rounded-xl shadow-custom" />
+        </div>
+      </div>
+
+      <!-- Contenu à propos -->
+      <div class="lg:w-1/2 animate-on-scroll">
+        <span class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full text-sm font-medium mb-4">
+          À propos de nous
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold font-display mb-6">
+          Votre partenaire <span class="gradient-text">digital</span> en Afrique
+        </h2>
+        <p class="text-gray-600 mb-6">
+          NexaDigital accompagne les petites et moyennes entreprises africaines dans leur transformation numérique depuis 2020. Notre équipe d'experts locaux connaît parfaitement les défis spécifiques du marché africain.
+        </p>
+        <p class="text-gray-600 mb-8">
+          Notre mission est de démocratiser l'accès aux technologies numériques pour favoriser la croissance économique locale et soutenir l'innovation africaine.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">5+</div>
+            <div class="text-gray-500 text-sm mt-1">Années d'expérience</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">200+</div>
+            <div class="text-gray-500 text-sm mt-1">Projets réalisés</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">12</div>
+            <div class="text-gray-500 text-sm mt-1">Pays africains</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gradient-text">95%</div>
+            <div class="text-gray-500 text-sm mt-1">Clients satisfaits</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section témoignages -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full text-sm font-medium mb-4">
+        Témoignages
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold font-display mb-4">
+        Ce que nos clients <span class="gradient-text">disent de nous</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Découvrez comment nous avons aidé des entreprises comme la vôtre à réussir leur transformation digitale.
+      </p>
+    </div>
+
+    <!-- Testimonials slider -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-data="{ activeSlide: 1 }">
+      <!-- Testimonial 1 -->
+      <div class="bg-white rounded-xl shadow-custom p-8 border-t-4 border-primary animate-on-scroll">
+        <div class="flex items-center mb-4">
+          <div class="text-primary">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <blockquote class="text-gray-600 mb-6">
+          "NexaDigital a complètement transformé notre présence en ligne. Notre nouveau site e-commerce nous a permis d'atteindre des clients dans toute l'Afrique de l'Ouest. Un investissement qui a rapidement été rentabilisé."
+        </blockquote>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+            <img src="/api/placeholder/48/48" alt="Photo de client" />
+          </div>
+          <div>
+            <h4 class="font-semibold">Aminata Diallo</h4>
+            <p class="text-gray-500 text-sm">Directrice, ModAfrique</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-white rounded-xl shadow-custom p-8 border-t-4 border-secondary animate-on-scroll">
+        <div class="flex items-center mb-4">
+          <div class="text-primary">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <blockquote class="text-gray-600 mb-6">
+          "La formation dispensée par NexaDigital a permis à notre équipe de prendre en main notre stratégie digitale. Leur approche pédagogique adaptée à notre contexte local a fait toute la différence."
+        </blockquote>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+            <img src="/api/placeholder/48/48" alt="Photo de client" />
+          </div>
+          <div>
+            <h4 class="font-semibold">Kofi Mensah</h4>
+            <p class="text-gray-500 text-sm">CEO, GreenTech Ghana</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-white rounded-xl shadow-custom p-8 border-t-4 border-accent animate-on-scroll">
+        <div class="flex items-center mb-4">
+          <div class="text-primary">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <blockquote class="text-gray-600 mb-6">
+          "Notre campagne de marketing digital conçue par NexaDigital a généré un ROI de 300% dès le premier trimestre. Leur compréhension du marché africain est inégalée."
+        </blockquote>
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+            <img src="/api/placeholder/48/48" alt="Photo de client" />
+          </div>
+          <div>
+            <h4 class="font-semibold">Jean-Pierre Mutombo</h4>
+            <p class="text-gray-500 text-sm">Directeur marketing, CongoFresh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section CTA -->
+<section class="py-16 bg-gradient-to-r from-primary to-accent text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-8 md:mb-0 text-center md:text-left">
+        <h2 class="text-3xl font-bold font-display mb-4">Prêt à transformer votre entreprise ?</h2>
+        <p class="text-white/80 max-w-xl">
+          blogez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <a href="#" class="px-6 py-3 bg-white text-primary font-medium rounded-lg hover:bg-blue-50 transition-colors">
+          Nous contacter
+        </a>
+        <a href="{% url 'lead_form' %}" class="px-6 py-3 border border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors">
+          Demander un devis
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section blog récent -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full text-sm font-medium mb-4">
+        Blog
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold font-display mb-4">
+        Nos derniers <span class="gradient-text">articles</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Restez informés des dernières tendances digitales et des meilleures pratiques pour les entreprises africaines.
+      </p>
+    </div>
+
+    <!-- Articles de blog -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Article 1 -->
+      <div class="bg-white rounded-xl shadow-custom overflow-hidden hover:shadow-lg transition-shadow animate-on-scroll">
+        <div class="h-48 overflow-hidden">
+          <img src="/api/placeholder/400/300" alt="Article blog" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500" />
+        </div>
+        <div class="p-6">
+          <div class="flex items-center text-sm text-gray-500 mb-3">
+            <span class="flex items-center mr-4">
+              <i class="far fa-calendar mr-1"></i> 12 Mai 2025
+            </span>
+            <span class="flex items-center">
+              <i class="far fa-user mr-1"></i> Marie Koné
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 hover:text-primary transition-colors">
+            <a href="#">Les tendances e-commerce en Afrique pour 2025</a>
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Découvrez les innovations qui transforment le paysage du commerce en ligne en Afrique et comment en tirer profit.
+          </p>
+          <a href="#" class="text-primary flex items-center font-medium hover:text-accent transition-colors">
+            Lire l'article
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="bg-white rounded-xl shadow-custom overflow-hidden hover:shadow-lg transition-shadow animate-on-scroll">
+        <div class="h-48 overflow-hidden">
+          <img src="/api/placeholder/400/300" alt="Article blog" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500" />
+        </div>
+        <div class="p-6">
+          <div class="flex items-center text-sm text-gray-500 mb-3">
+            <span class="flex items-center mr-4">
+              <i class="far fa-calendar mr-1"></i> 5 Mai 2025
+            </span>
+            <span class="flex items-center">
+              <i class="far fa-user mr-1"></i> Omar Dieng
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 hover:text-primary transition-colors">
+            <a href="#">Comment le mobile banking révolutionne les PME africaines</a>
+          </h3>
+          <p class="text-gray-600 mb-4">
+            L'essor des paiements mobiles et leur impact sur la croissance des petites entreprises du continent.
+          </p>
+          <a href="#" class="text-primary flex items-center font-medium hover:text-accent transition-colors">
+            Lire l'article
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="bg-white rounded-xl shadow-custom overflow-hidden hover:shadow-lg transition-shadow animate-on-scroll">
+        <div class="h-48 overflow-hidden">
+          <img src="/api/placeholder/400/300" alt="Article blog" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500" />
+        </div>
+        <div class="p-6">
+          <div class="flex items-center text-sm text-gray-500 mb-3">
+            <span class="flex items-center mr-4">
+              <i class="far fa-calendar mr-1"></i> 28 Avril 2025
+            </span>
+            <span class="flex items-center">
+              <i class="far fa-user mr-1"></i> Fatou Sy
+            </span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 hover:text-primary transition-colors">
+            <a href="#">5 conseils pour une stratégie de médias sociaux efficace</a>
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Maximisez l'impact de votre présence sur les réseaux sociaux avec ces techniques adaptées au marché africain.
+          </p>
+          <a href="#" class="text-primary flex items-center font-medium hover:text-accent transition-colors">
+            Lire l'article
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bouton tous les articles -->
+    <div class="text-center mt-12">
+      <a href="#" class="inline-flex items-center px-6 py-3 border border-primary text-primary bg-white/80 font-medium rounded-lg hover:bg-blue-50 transition-all">
+        Voir tous les articles
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Section partenaires -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 animate-on-scroll">
+      <span class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full text-sm font-medium mb-4">
+        Partenaires
+      </span>
+      <h2 class="text-2xl md:text-3xl font-bold font-display mb-4">
+        Ils nous font confiance
+      </h2>
+    </div>
+
+    <!-- Logos partenaires -->
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+      <div class="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+        <img src="/api/placeholder/120/60" alt="Partenaire 1" class="max-w-full max-h-full" />
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+        <img src="/api/placeholder/120/60" alt="Partenaire 2" class="max-w-full max-h-full" />
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+        <img src="/api/placeholder/120/60" alt="Partenaire 3" class="max-w-full max-h-full" />
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+        <img src="/api/placeholder/120/60" alt="Partenaire 4" class="max-w-full max-h-full" />
+      </div>
+      <div class="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+        <img src="/api/placeholder/120/60" alt="Partenaire 5" class="max-w-full max-h-full" />
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
