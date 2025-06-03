@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Projets - NexaDigital | Portfolio & Réalisations Web</title>
+    <meta name="description" content="Découvrez les projets web réalisés par NexaDigital : sites vitrine, e-commerce, applications web et solutions sur mesure pour nos clients.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nexa-blue': '#1E3A8A',
+                        'nexa-light-blue': '#3B82F6',
+                        'nexa-accent': '#6366F1',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in-down': 'fadeInDown 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-nexa-blue hover:text-nexa-light-blue transition-colors duration-300">
+                    <span class="bg-gradient-to-r from-nexa-blue to-nexa-light-blue bg-clip-text text-transparent">Nexa</span>Digital
+                </a>
+                
+                <!-- Menu mobile -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300" id="menuButton">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <!-- Menu desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-nexa-blue transition-colors duration-300">Accueil</a>
+                    <a href="services.html" class="text-gray-600 hover:text-nexa-blue transition-colors duration-300">Services</a>
+                    <a href="projects.html" class="text-nexa-blue font-medium border-b-2 border-nexa-blue pb-1">Projets</a>
+                    <a href="about.html" class="text-gray-600 hover:text-nexa-blue transition-colors duration-300">À propos</a>
+                    <a href="contact.html" class="bg-nexa-blue text-white px-6 py-2 rounded-full hover:bg-nexa-light-blue transition-all duration-300 transform hover:scale-105">Contact</a>
+                </div>
+            </div>
+
+            <!-- Menu mobile dropdown -->
+            <div class="md:hidden mt-4 hidden" id="mobileMenu">
+                <div class="flex flex-col space-y-4 py-4 border-t border-gray-200">
+                    <a href="index.html" class="text-gray-600 hover:text-nexa-blue transition-colors duration-300">Accueil</a>
+                    <a href="services.html" class="text-gray-600 hover:text-nexa-blue transition-colors duration-300">Services</a>
+                    <a href="projects.html" class="text-nexa-blue font-medium">Projets</a>
+                    <a href="about.html" class="text-gray-600 hover:text-nexa-blue transition-colors duration-300">À propos</a>
+                    <a href="contact.html" class="bg-nexa-blue text-white px-6 py-2 rounded-full text-center hover:bg-nexa-light-blue transition-all duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-nexa-blue via-nexa-light-blue to-nexa-accent">
+        <div class="container mx-auto px-4 text-center">
+            <div class="animate-fade-in-down">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Nos <span class="text-yellow-300">Réalisations</span>
+                </h1>
+                <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Découvrez notre portfolio de projets web innovants, créés avec passion et expertise pour nos clients.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="filter-btn active bg-white text-nexa-blue px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105" data-filter="all">
+                        Tous les projets
+                    </button>
+                    <button class="filter-btn bg-white/20 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/30 transition-all duration-300" data-filter="ecommerce">
+                        E-commerce
+                    </button>
+                    <button class="filter-btn bg-white/20 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/30 transition-all duration-300" data-filter="vitrine">
+                        Sites vitrine
+                    </button>
+                    <button class="filter-btn bg-white/20 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/30 transition-all duration-300" data-filter="webapp">
+                        Applications web
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                <!-- Projet 1 - E-commerce -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in" data-category="ecommerce">
+                    <div class="relative group">
+                        <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                                    </svg>
+                                </div>
+                                <p class="font-semibold">E-commerce Screenshot</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-white text-nexa-blue px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-300">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">E-commerce</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-yellow-400 rounded-full" title="JavaScript"></span>
+                                <span class="w-3 h-3 bg-blue-500 rounded-full" title="React"></span>
+                                <span class="w-3 h-3 bg-green-500 rounded-full" title="Node.js"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">BoutiqueMode.fr</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Plateforme e-commerce complète pour une boutique de mode avec système de paiement sécurisé, gestion des stocks et interface d'administration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Stripe</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">MongoDB</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Durée: 8 semaines</span>
+                            <button class="text-nexa-blue hover:text-nexa-light-blue font-semibold text-sm">
+                                En savoir plus →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 - Site vitrine -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in" data-category="vitrine">
+                    <div class="relative group">
+                        <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                </div>
+                                <p class="font-semibold">Corporate Website</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-white text-nexa-blue px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-300">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Site vitrine</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-orange-500 rounded-full" title="HTML"></span>
+                                <span class="w-3 h-3 bg-blue-400 rounded-full" title="CSS"></span>
+                                <span class="w-3 h-3 bg-yellow-400 rounded-full" title="JavaScript"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Cabinet Avocat Dubois</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Site vitrine professionnel pour un cabinet d'avocats avec présentation des services, équipe et formulaire de contact sécurisé.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">HTML5</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">CSS3</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">SEO</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Durée: 4 semaines</span>
+                            <button class="text-nexa-blue hover:text-nexa-light-blue font-semibold text-sm">
+                                En savoir plus →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 - Application web -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in" data-category="webapp">
+                    <div class="relative group">
+                        <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </div>
+                                <p class="font-semibold">Web Application</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-white text-nexa-blue px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-300">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Application web</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-blue-500 rounded-full" title="React"></span>
+                                <span class="w-3 h-3 bg-green-500 rounded-full" title="Node.js"></span>
+                                <span class="w-3 h-3 bg-purple-500 rounded-full" title="PostgreSQL"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">TaskFlow Pro</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Application de gestion de projets et de tâches avec collaboration en temps réel, tableaux de bord personnalisés et rapports avancés.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Express.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">PostgreSQL</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Socket.io</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Durée: 12 semaines</span>
+                            <button class="text-nexa-blue hover:text-nexa-light-blue font-semibold text-sm">
+                                En savoir plus →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 - E-commerce -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in" data-category="ecommerce">
+                    <div class="relative group">
+                        <div class="h-48 bg-gradient-to-br from-red-400 to-pink-400 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                    </svg>
+                                </div>
+                                <p class="font-semibold">Online Bookstore</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-white text-nexa-blue px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-300">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">E-commerce</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-indigo-500 rounded-full" title="Vue.js"></span>
+                                <span class="w-3 h-3 bg-green-500 rounded-full" title="Node.js"></span>
+                                <span class="w-3 h-3 bg-orange-500 rounded-full" title="MySQL"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Librairie NumérikBooks</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Librairie en ligne spécialisée avec système de recommandations, prévisualisations de livres et programme de fidélité intégré.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Vue.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Express.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">MySQL</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">PayPal</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Durée: 10 semaines</span>
+                            <button class="text-nexa-blue hover:text-nexa-light-blue font-semibold text-sm">
+                                En savoir plus →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5 - Site vitrine -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in" data-category="vitrine">
+                    <div class="relative group">
+                        <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <p class="font-semibold">Restaurant Website</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-white text-nexa-blue px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-300">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Site vitrine</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-orange-500 rounded-full" title="HTML"></span>
+                                <span class="w-3 h-3 bg-blue-400 rounded-full" title="CSS"></span>
+                                <span class="w-3 h-3 bg-yellow-400 rounded-full" title="JavaScript"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Restaurant Le Gourmet</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Site vitrine élégant pour un restaurant gastronomique avec menu interactif, réservation en ligne et galerie photo immersive.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">HTML5</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">SCSS</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">API Maps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Durée: 6 semaines</span>
+                            <button class="text-nexa-blue hover:text-nexa-light-blue font-semibold text-sm">
+                                En savoir plus →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 6 - Application web -->
+                <div class="project-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-scale-in" data-category="webapp">
+                    <div class="relative group">
+                        <div class="h-48 bg-gradient-to-br from-indigo-400 to-purple-400 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="w-16 h-16 bg-white/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                                    </svg>
+                                </div>
+                                <p class="font-semibold">E-commerce Screenshot</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="bg-white text-nexa-blue px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-300">
+                                Voir le projet
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">E-commerce</span>
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-yellow-400 rounded-full" title="JavaScript"></span>
+                                <span class="w-3 h-3 bg-blue-500 rounded-full" title="React"></span>
+                                <span class="w-3 h-3 bg-green-500 rounded-full" title="Node.js"></span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">BoutiqueMode.fr</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Plateforme e-commerce complète pour une boutique de mode avec système de paiement sécurisé, gestion des stocks et interface d'administration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Stripe</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">MongoDB</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">Durée: 8 semaines</span>
+                            <button class="text-nexa-blue hover:text-nexa-light-blue font-semibold text-sm">
+                                En savoir plus →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <div class="bg-gradient-to-r from-nexa-blue to-nexa-light-blue rounded-2xl p-8 text-white">
+                    <h2 class="text-3xl font-bold mb-4">Votre projet mérite le meilleur</h2>
+                    <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
+                        Prêt à transformer votre idée en réalité digitale ? Discutons de votre projet et créons ensemble quelque chose d'exceptionnel.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="contact.html" class="bg-white text-nexa-blue px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105">
+                            Démarrer un projet
+                        </a>
+                        <a href="services.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-nexa-blue transition-all duration-300">
+                            Voir nos services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Nos résultats en chiffres</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Des performances qui parlent d'elles-mêmes et témoignent de notre expertise
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-nexa-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-nexa-blue mb-2">50+</h3>
+                    <p class="text-gray-600 font-medium">Projets réalisés</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-green-500 mb-2">40+</h3>
+                    <p class="text-gray-600 font-medium">Clients satisfaits</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-violet-50 hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-purple-500 mb-2">98%</h3>
+                    <p class="text-gray-600 font-medium">Temps de disponibilité</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-orange-50 to-red-50 hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-orange-500 mb-2">72h</h3>
+                    <p class="text-gray-600 font-medium">Délai de réponse moyen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <span class="bg-gradient-to-r from-nexa-light-blue to-nexa-accent bg-clip-text text-transparent">Nexa</span>Digital
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Votre partenaire de confiance pour le développement web professionnel. Nous transformons vos idées en solutions digitales performantes et esthétiques.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-nexa-blue rounded-full flex items-center justify-center hover:bg-nexa-light-blue transition-colors duration-300">
+                            <span class="text-sm">f</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-nexa-blue rounded-full flex items-center justify-center hover:bg-nexa-light-blue transition-colors duration-300">
+                            <span class="text-sm">tw</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-nexa-blue rounded-full flex items-center justify-center hover:bg-nexa-light-blue transition-colors duration-300">
+                            <span class="text-sm">in</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Accueil</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors duration-300">Services</a></li>
+                        <li><a href="projects.html" class="text-gray-300 hover:text-white transition-colors duration-300">Projets</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors duration-300">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            contact@nexadigital.fr
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            01 23 45 67 89
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            Paris, France
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 NexaDigital. Tous droits réservés. | 
+                    <a href="#" class="hover:text-white transition-colors duration-300">Mentions légales</a> | 
+                    <a href="#" class="hover:text-white transition-colors duration-300">Politique de confidentialité</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-white', 'text-nexa-blue');
+                    btn.classList.add('bg-white/20', 'text-white');
+                });
+
+                // Add active class to clicked button
+                button.classList.add('active', 'bg-white', 'text-nexa-blue');
+                button.classList.remove('bg-white/20', 'text-white');
+
+                const filter = button.dataset.filter;
+
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        card.classList.add('animate-scale-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe project cards
+        projectCards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
