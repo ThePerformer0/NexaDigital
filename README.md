@@ -47,6 +47,18 @@ nexadigital/
 
 ---
 
+## 🚀 Déploiement
+
+Le site est actuellement déployé sur Netlify et accessible à l'adresse : [https://nexadigital.netlify.app/](https://nexadigital.netlify.app/)
+
+### Fonctionnalités du déploiement
+- ✅ HTTPS automatique
+- ✅ CDN global
+- ✅ Déploiement continu depuis GitHub
+- ✅ Performance optimisée
+
+---
+
 ## 📸 Captures d'Écran
 
 ### Page d'Accueil
@@ -75,26 +87,6 @@ nexadigital/
 
 ---
 
-## 🏁 Démarrage Rapide
-
-Le projet est entièrement statique et ne nécessite aucune dépendance ni installation complexe.
-
-1.  **Clonez ce dépôt sur votre machine locale :**
-    ```bash
-    git clone [https://github.com/](https://github.com/)[VOTRE-PSEUDO]/[NOM-DU-DEPOT].git
-    ```
-
-2.  **Naviguez vers le dossier du projet :**
-    ```bash
-    cd nexadigital
-    ```
-
-3.  **Ouvrez le fichier `index.html`** directement dans votre navigateur web (Google Chrome, Firefox, etc.).
-
-Et c'est tout ! Le site est prêt à être exploré.
-
----
-
 ## 🎨 Design et Guide de Style
 
 Le design a été conçu pour être professionnel, épuré et engageant, en accord avec l'image de marque d'une agence digitale moderne.
@@ -119,4 +111,27 @@ Ce projet constitue une base solide qui peut être étendue de plusieurs manièr
 * **Optimisations** : Mettre en place un processus de build (avec Vite ou Webpack) pour minifier les fichiers CSS/JS et optimiser les images, améliorant ainsi les performances.
 * **Formulaire Fonctionnel** : Connecter le formulaire de contact à un service comme Netlify Forms, Formspree ou à un endpoint d'API personnalisé pour recevoir les messages par email.
 
-```
+## 👨‍💻 À propos de l'auteur
+
+**Feke Jimmy** est un développeur web passionné spécialisé dans le développement frontend. Ce projet fait partie de son portfolio personnel pour démontrer ses compétences en développement web moderne.
+
+* **Email**: fjimmyxilson@gmail.com
+* **GitHub**: [ThePerformer0](https://github.com/ThePerformer0)
+
+---
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet, n'hésitez pas à :
+
+1. Fork le projet
+2. Créer une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
+
+---
+
+## 📝 Licence
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
